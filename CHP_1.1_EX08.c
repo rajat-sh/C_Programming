@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 
-/* Copy input to output */
+/* Copy input to output; 1st version */
 
 main ()
 
