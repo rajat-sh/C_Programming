@@ -1,7 +1,7 @@
 #include <stdio.h>
 
-#define  IN 1  /* sate to represent in word */
-#define OUT 0  /* state to represent out of word */
+#define  IN 1  /* sate to represent "in word" */
+#define OUT 0  /* state to represent "out of word" */
 
 /* A program to count the number of characters, newlines and words */
 
