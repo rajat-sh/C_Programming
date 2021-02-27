@@ -1,11 +1,8 @@
 #include <stdio.h>
+#define IN 1
+#define OUT 0
 
-#define  IN 1  /* sate to represent "in word" */
-#define OUT 0  /* state to represent "out of word" */
-
-/* A program to count the number of characters, newlines and words */
-
-
+/* A program to count number of characters, lines and words */
 
 main()
 
@@ -14,31 +11,26 @@ main()
 
 
 	int c, nc, wc, nl, state;
-	
-	nc = nl = wc = 0;
 
+	nc = wc = nl = 0;
 	state = OUT;
 
-	while ( ( c = getchar() )  != EOF )
-	{
+	while((c = getchar()) != EOF){
 		++nc;
-		if ( c == '\n' )
+		if(c == '\n')
 			++nl;
-		if ( c == ' ' || c == '\n' || c == '\t' )
+		if(c == ' ' || c == '\t' || c == '\n')
 			state = OUT;
-		else if ( state == OUT )
-		{
+		else if(state == OUT){
 			++wc;
 			state = IN;
-		}
-
+		     }	
 	}
-	
-	printf ( "Character Count: %d\nWord Count:%d\nNew line Count:%d\n" , nc, wc, nl );
 
-
-	
-
+	printf("Number of characters:%d\nNumber of words:%d\nNumber of lines:%d\n", nc, wc, nl);
 
 }
 
+
+	
+	
