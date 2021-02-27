@@ -1,7 +1,9 @@
 #include <stdio.h>
+#define IN 1   /* represents a state of in the blank */
+#define OUT 0 /* represents a state of not in the blank */
 
-/* A program to copy input to output, replacing each string of one or more blanks by a single blank */
 
+/* A program that copies its input to its output, replacing more than one consecutive blanks with a single blank */
 
 
 main()
@@ -16,16 +18,15 @@ main()
 	state = 0; 
 
 	while((c = getchar()) != EOF){
-		if (c == ' ' && state == 0){
+		if (c == ' ' && state == OUT){
 			putchar(c);
-			state = 1;
+			state = IN;
 		}
 		if (c != ' '){
-			state = 0;
+			state = OUT;
 			putchar(c);
 		}
 		
 	}
 
 }
-	
