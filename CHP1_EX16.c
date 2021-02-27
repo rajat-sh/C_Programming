@@ -10,23 +10,22 @@ main()
 {
 
 
-	int c, blank;
-
-	blank = 0;
+	int c;
+	int state;
 	
-	while ( ( c = getchar() ) != EOF )
-	{	
+	state = 0; 
 
-		if ( c != ' ' )
-			putchar (c);
-		if ( c != ' ' )
-			blank = 0;
-		if ( c == ' ' )
-			++blank;
-		if ( blank == 1)
-			putchar (c);
-			
+	while((c = getchar()) != EOF){
+		if (c == ' ' && state == 0){
+			putchar(c);
+			state = 1;
+		}
+		if (c != ' '){
+			state = 0;
+			putchar(c);
+		}
+		
 	}
 
 }
-		
+	
